@@ -35,7 +35,7 @@ For more details about the product please check http://www.seeedstudio.com/depot
  
 #define DEBUG_ENABLED  1
 MeetAndroid meetAndroid;
-int onboardLed = 12;
+int onboardLed = 13;
  
 SoftwareSerial blueToothSerial(RxD,TxD);
  

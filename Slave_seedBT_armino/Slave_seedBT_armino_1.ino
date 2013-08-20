@@ -35,8 +35,7 @@ For more details about the product please check http://www.seeedstudio.com/depot
  
 #define DEBUG_ENABLED  1
 MeetAndroid meetAndroid;
-int onboardLed = 12;
- 
+
 SoftwareSerial blueToothSerial(RxD,TxD);
  
 void setup() 
@@ -45,10 +44,7 @@ void setup()
   pinMode(RxD, INPUT);
   pinMode(TxD, OUTPUT);
   setupBlueToothConnection();
-  meetAndroid.registerFunction(testEvent, 'A');  
-
-  pinMode(onboardLed, OUTPUT);
-  digitalWrite(onboardLed, HIGH);
+ 
  
 } 
  
@@ -83,19 +79,6 @@ void setupBlueToothConnection()
   blueToothSerial.flush();
 }
 
-void testEvent(byte flag, byte numOfValues)
-{
-  flushLed(300);
-  flushLed(300);
-}
-
-void flushLed(int time)
-{
-  digitalWrite(onboardLed, LOW);
-  delay(time);
-  digitalWrite(onboardLed, HIGH);
-  delay(time);
-}
 
 
 
